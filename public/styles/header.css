@@ -1,0 +1,9 @@
+header {
+  background-color: #a16c40;
+  background-image: url("../images/green-cup.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
