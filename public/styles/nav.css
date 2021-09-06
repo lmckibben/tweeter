@@ -2,10 +2,20 @@ nav {
   background-color: #4056A1;
   color: #FFFFFF;
   height: 120px;
-  display: flex;
+  padding: 1.5em;
 }
 
-span {
+.logo {
   font-family: 'Bungee', cursive;
-  padding: 1.5em;
+}
+
+.tweet {
+  float: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.fas {
+  color: red;
+  align-self: center;
 }
