@@ -3,6 +3,8 @@ nav {
   color: #FFFFFF;
   height: 120px;
   padding: 1.5em;
+  position: relative;
+  z-index: 10;
 }
 
 .logo {
