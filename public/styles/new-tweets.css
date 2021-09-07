@@ -1,0 +1,41 @@
+.button-count {
+  align-content: space-between;
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+  
+}
+
+.new-tweet {
+  width: 100%;
+}
+
+.text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+[name="text"] {
+  width: 100%;
+  border-bottom: 2px solid black;
+  background: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  resize: none;
+}
+
+[type="submit"] {
+  background-color: #1132a0;
+  font-family: 'Bungee', cursive;
+  color: white;
+}
+
+.button-count {
+  display: flex;
+  justify-content: space-between;
+}
