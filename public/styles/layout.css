@@ -29,11 +29,7 @@ body {
  main {
   width: 90%;
   margin: auto;
-  
- }
-
- .container {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
  }
