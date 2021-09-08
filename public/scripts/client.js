@@ -35,7 +35,7 @@ $(() => {
         <i class="fas fa-retweet"></i>
         <i class="fas fa-heart"></i>
       </article>
-      <p class="days-since">${obj.created_at}</p>
+      <p class="days-since">${timeago.format(obj.created_at)}</p>
     </footer>
   </section>
     `
