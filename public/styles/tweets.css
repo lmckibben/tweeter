@@ -1,0 +1,48 @@
+.tweetContainer {
+  border: 2px solid black;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.profile {
+  display: flex;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  justify-content: space-between;
+}
+
+.profileContainer {
+  display: flex;
+}
+
+.profileName {
+  margin-left: 20px;
+}
+
+.tweetContent {
+  display: flex;
+  padding: 1rem;
+  border-bottom: 2px solid black;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+  
+}
+
+.userHandle {
+  display: flex;
+  font-size: 30px;
+  color: lightblue;
+}
+
+.tweetFooter {
+  display: flex;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.daysSince {
+  font-size: 15px;
+}
