@@ -30,6 +30,7 @@ body {
   width: 90%;
   margin: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
  }
