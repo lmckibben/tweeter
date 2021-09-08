@@ -3,7 +3,8 @@ nav {
   color: #FFFFFF;
   height: 120px;
   padding: 1.5em;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10;
 }
 
