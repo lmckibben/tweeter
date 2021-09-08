@@ -1,5 +1,6 @@
 .new-tweet {
   padding-bottom: 7.5mm;
+  position: relative;
 }
 
 .button-count {
