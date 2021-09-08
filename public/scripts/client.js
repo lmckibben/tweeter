@@ -12,7 +12,6 @@ $(() => {
       method: 'GET',
       dataType: 'json',
       success: (tweets) => {
-        console.log("tweets", tweets)
         $('#tweets-container').prepend(renderTweets(tweets));
       },
       error: (err) => {
@@ -23,12 +22,12 @@ $(() => {
   loadTweets();
 
   const renderTweets = function(tweets) {
-    let output = "";
-
+    let output = [];
+    $('tweets-container').empty();
     for (const tweet of tweets) {
-      output += createTweetElement(tweet);
+      output.push(createTweetElement(tweet));
     }
-
+    output.reverse();
     return output;
   };
 
@@ -60,11 +59,16 @@ $(() => {
   $form.on('submit', function(event) {
     event.preventDefault();
     const serializedTweet = $(this).serialize();
-    console.log(serializedTweet);
-
-    $.post('/tweets', serializedTweet, (response) => {
-      console.log(response)
-      
-    });
+    let counter = $(this).children('.button-count').children(".counter").text();
+    console.log(counter);
+    if (counter < 0) {
+      alert('Please keep tweet to 140 characters or less.');
+    } else if (counter == 140) {
+      alert('Please write a tweet before hitting submit');
+    } else {
+      $.post('/tweets', serializedTweet, (response) => {
+        console.log(response)
+      });
+    }
   })
 });
