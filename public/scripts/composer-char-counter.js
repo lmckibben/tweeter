@@ -1,7 +1,7 @@
 $(document).ready(function() {
   const $tweetText = $('#tweet-text');
-  const $counter = $(".counter");
   $tweetText.on("keydown", function() {
+    const $counter = $(this).parent().parent().children('.button-count').children(".counter");
     const textLength = this.textLength;
     let charLimit = 139 - textLength;
     const key = event.keyCode || event.charCode;
