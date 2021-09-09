@@ -64,16 +64,27 @@ $(() => {
   const $form = $('#new-tweet-form');
   $form.on('submit', function(event) {
     event.preventDefault();
+    const $error = $('.error');
     const serializedTweet = $(this).serialize();
-    let counter = $(this).children('.button-count').children(".counter").text();
-    if (counter < 0) {
-      alert('Please keep tweet to 140 characters or less.');
-    } else if (counter == 140) {
-      alert('Please write a tweet before hitting submit');
+    let $counter = $(this).children('.button-count').children(".counter").text();
+    if ($counter < 0) {
+      $error.html("<i class='fas fa-exclamation-triangle'></i>Too long. Please respect our arbitrary limit of 140 characters.<i class='fas fa-exclamation-triangle'></i>")
+      $error.slideDown(() =>  {
+        $error.show();
+      })
+    } else if ($counter == 140) {
+      $error.html(`<i class="fas fa-exclamation-triangle"></i>Tweet empty, Write out your thoughts before hitting submit.<i class="fas fa-exclamation-triangle"></i>`);
+      $error.slideDown(() =>  {
+        $error.show();
+      })
     } else {
       $.post('/tweets', serializedTweet, (response) => {
         loadTweets();
         $(this).children('.text').children('#tweet-text').val("");
+        $(this).children('.button-count').children(".counter").val(140);
+        $error.slideUp(() => {
+          $error.hide();
+        })
       });
     }
   })
