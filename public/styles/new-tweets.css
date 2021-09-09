@@ -2,6 +2,18 @@
   padding-bottom: 7.5mm;
 }
 
+.error {
+  border: 2px solid red;
+  background-color: transparent;
+  color: red;
+  display: none;
+}
+
+
+.error > i {
+  color: red;
+}
+
 .button-count {
   align-content: space-between;
 }
@@ -40,3 +52,7 @@
   display: flex;
   justify-content: space-between;
 }
+
+
+
+
