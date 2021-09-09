@@ -1,4 +1,4 @@
 node_modules/
 .env
 .DS_Store
-initial-tweets.json
+/server/data-files/initial-tweets.json
