@@ -12,6 +12,7 @@ $(() => {
       method: 'GET',
       dataType: 'json',
       success: (tweets) => {
+        $('#tweets-container').empty();
         $('#tweets-container').prepend(renderTweets(tweets));
       },
       error: (err) => {
@@ -23,7 +24,6 @@ $(() => {
 
   const renderTweets = function(tweets) {
     let output = [];
-    $('tweets-container').empty();
     for (const tweet of tweets) {
       output.push(createTweetElement(tweet));
     }
@@ -32,6 +32,11 @@ $(() => {
   };
 
   const createTweetElement = function(obj) {
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
     const tweetContainer = `
     <section class="tweet-container">
       <header class="profile">
@@ -41,7 +46,7 @@ $(() => {
       </article>
       <article class="user-handle">${obj.user.handle}</article>
     </header>
-    <p class="tweet-content">${obj.content.text}</p>
+    <p class="tweet-content">${escape(obj.content.text)}</p>
     <footer class="tweet-footer">
       <article class="tweet-icons">
         <i class="fas fa-flag"></i>
@@ -55,19 +60,20 @@ $(() => {
     return tweetContainer
   }
 
+
   const $form = $('#new-tweet-form');
   $form.on('submit', function(event) {
     event.preventDefault();
     const serializedTweet = $(this).serialize();
     let counter = $(this).children('.button-count').children(".counter").text();
-    console.log(counter);
     if (counter < 0) {
       alert('Please keep tweet to 140 characters or less.');
     } else if (counter == 140) {
       alert('Please write a tweet before hitting submit');
     } else {
       $.post('/tweets', serializedTweet, (response) => {
-        console.log(response)
+        loadTweets();
+        $(this).children('.text').children('#tweet-text').val("");
       });
     }
   })
