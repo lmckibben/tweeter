@@ -47,15 +47,11 @@
   justify-content: space-between;
 }
 
-.fas {
+.tweet-icons > i {
   color: #4056A1;
 }
 
-.fas:hover {
+.tweet-icons > i:hover {
   color: goldenrod;
-}
-
-.days-since {
-  font-size: 15px;
   
 }
