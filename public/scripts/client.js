@@ -16,9 +16,9 @@ $(() => {
         $('#tweets-container').prepend(renderTweets(tweets));
       },
       error: (err) => {
-        console.log(`error: ${err}`)
+        console.log(`error: ${err}`);
       }
-    })
+    });
   };
   loadTweets();
 
@@ -32,7 +32,7 @@ $(() => {
   };
 
   const createTweetElement = function(obj) {
-    const escape = function (str) {
+    const escape = function(str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
@@ -56,9 +56,9 @@ $(() => {
       <p class="days-since">${timeago.format(obj.created_at)}</p>
     </footer>
   </section>
-    `
-    return tweetContainer
-  }
+    `;
+    return tweetContainer;
+  };
 
 
   const $form = $('#new-tweet-form');
@@ -68,10 +68,10 @@ $(() => {
     const serializedTweet = $(this).serialize();
     let $counter = $(this).children('.button-count').children(".counter").text();
     if ($counter < 0) {
-      $error.html("<i class='fas fa-exclamation-triangle'></i>Too long. Please respect our arbitrary limit of 140 characters.<i class='fas fa-exclamation-triangle'></i>")
+      $error.html("<i class='fas fa-exclamation-triangle'></i>Too long. Please respect our arbitrary limit of 140 characters.<i class='fas fa-exclamation-triangle'></i>");
       $error.slideDown(() =>  {
         $error.show();
-      })
+      });
     } else if ($counter == 140) {
       $error.html(`<i class="fas fa-exclamation-triangle"></i>Tweet empty, Write out your thoughts before hitting submit.<i class="fas fa-exclamation-triangle"></i>`);
       $error.slideDown(() =>  {
@@ -84,8 +84,8 @@ $(() => {
         $(this).children('.button-count').children(".counter").val(140);
         $error.slideUp(() => {
           $error.hide();
-        })
+        });
       });
-    }
+    };
   })
 });
