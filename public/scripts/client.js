@@ -32,6 +32,7 @@ $(() => {
   };
 
   const createTweetElement = function(obj) {
+    //function to prevent xss attacks
     const escape = function(str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
@@ -68,20 +69,27 @@ $(() => {
     const serializedTweet = $(this).serialize();
     let $counter = $(this).children('.button-count').children(".counter").text();
     if ($counter < 0) {
+      //sets text in error msg
       $error.html("<i class='fas fa-exclamation-triangle'></i>Too long. Please respect our arbitrary limit of 140 characters.<i class='fas fa-exclamation-triangle'></i>");
+      //shows error msg
       $error.slideDown(() =>  {
         $error.show();
       });
     } else if ($counter == 140) {
+      //sets text in error msg
       $error.html(`<i class="fas fa-exclamation-triangle"></i>Tweet empty, Write out your thoughts before hitting submit.<i class="fas fa-exclamation-triangle"></i>`);
+      //shows error msg
       $error.slideDown(() =>  {
         $error.show();
       })
     } else {
       $.post('/tweets', serializedTweet, (response) => {
         loadTweets();
+        //clears text input
         $(this).children('.text').children('#tweet-text').val("");
+        //sets counter back to 140
         $(this).children('.button-count').children(".counter").val(140);
+        //hides error msg
         $error.slideUp(() => {
           $error.hide();
         });
