@@ -1,11 +1,14 @@
 nav {
-  background-color: #4056A1;
+  background-color: transparent;
   color: #FFFFFF;
   height: 120px;
   padding: 1.5em;
   position: sticky;
+  display: flex;
+  justify-content: space-between;
   top: 0;
   z-index: 10;
+  margin-bottom: -120px;
 }
 
 .logo {
@@ -13,12 +16,12 @@ nav {
 }
 
 .tweet {
-  float: right;
   display: flex;
   flex-direction: column;
+  
 }
 
-.fas {
+.fas  {
   color: red;
   align-self: center;
 }
