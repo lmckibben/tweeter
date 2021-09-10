@@ -29,8 +29,34 @@ body {
  main {
   width: 80%;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
  }
+
+ /* tablet breakout */
+/* Tablet Styles */
+@media only screen and (min-width: 1024px) {
+  .nav-bar {
+    background-color: #4056A1;
+  }
+
+  .head-tweet {
+    margin-top: 10em;
+    display: flex;
+  }
+
+  .header{
+    -webkit-transform:scale(0.6);
+    -moz-transform:scale(0.6);
+    -ms-transform:scale(0.6);
+    transform:scale(0.6);
+    }
+
+  .new-tweet {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  }
+
+  .tweet-container {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  }
+}
