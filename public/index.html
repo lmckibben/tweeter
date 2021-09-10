@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
@@ -43,46 +44,49 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav class="nav-bar">
       <span class="logo">tweeter</span>
       <div class="tweet">
         <span>Write a new tweet</span>
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
-
-    <header class="header">
-      <div class="profileImage">
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class="name">
-          <h2>Leland</h2>
-      </div>
-  </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-
-      <section class="new-tweet">
-
-        <p class="error"></p>
-        
-        <h2>Compose Tweet</h2>
-        <form id="new-tweet-form" method="POST" action="/tweets">
-          <div class="text">
-            <label for="tweet-text">What are you humming about?</label>
-            <textarea name="text" id="tweet-text"></textarea>
-          </div>
-          <div class="button-count">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-
-      <section id="tweets-container">
-      </section>
+    
+    <section class="head-tweet">
+      
+      <header class="header">
+        <div class="profile-image">
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div class="name">
+            <h2>Leland</h2>
+        </div>
+    </header>
+  
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+  
+        <section class="new-tweet">
+  
+          <p class="error"></p>
+          
+          <h2>Compose Tweet</h2>
+          <form id="new-tweet-form" method="POST" action="/tweets">
+            <div class="text">
+              <label for="tweet-text">What are you humming about?</label>
+              <textarea name="text" id="tweet-text"></textarea>
+            </div>
+            <div class="button-count">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+  
+        <section id="tweets-container">
+        </section>
+    </section>
 
     </main>
 
